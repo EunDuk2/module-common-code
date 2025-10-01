@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.example'  // module-common의 groupId
-version = '1.0.1'      // 버전
+version = '1.0.2'      // 버전
 description = 'module-common'
 
 java {
@@ -28,10 +28,10 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/EunDuk2/module-common")
+            url = uri("https://maven.pkg.github.com/YOUR_GITHUB_USERNAME/module-common")
             credentials {
-                username = "EunDuk2"               // GitHub 계정
-                password = "xx"        // Personal Access Token
+                username = System.getenv("GITHUB_USER")
+                password = System.getenv("GITHUB_TOKEN")
             }
         }
     }
