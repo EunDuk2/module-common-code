@@ -17,11 +17,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           server-id: github
-          server-username: ${{ secrets.GITHUB_USER }}
-          server-password: ${{ secrets.GITHUB_TOKEN }}
+          server-username: ${{ secrets.MY_USER }}
+          server-password: ${{ secrets.MY_TOKEN }}
 
       - name: Build and Publish
         run: ./gradlew clean build publish
         env:
-          GITHUB_USER: ${{ secrets.GITHUB_USER }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: ${{ secrets.MY_USER }}
+          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
