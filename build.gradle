@@ -19,8 +19,6 @@ jar {
 }
 
 // GitHub Packages 배포 설정
-// build.gradle 파일의 publishing 블록 수정
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -33,16 +31,6 @@ publishing {
             // YOUR_GITHUB_USERNAME을 실제 GitHub 사용자 이름으로 변경하세요.
             url = uri("https://maven.pkg.github.com/Eunduk2/module-common")
 
-            // ❌ 이 부분을 제거하거나, 아래와 같이 GitHub Actions의 setup-java 액션 설정을 따르도록 수정합니다.
-            /*
-            credentials {
-                username = System.getenv("MY_USER")
-                password = System.getenv("MY_TOKEN")
-            }
-            */
-
-            // 💡 Gradle 7.0 이상에서 GitHub Packages에 대한 일반적인 인증 방식
-            // setup-java 액션의 server-id: github와 연결됩니다.
             credentials {
                 username = System.getenv("GITHUB_ACTOR") ?: project.properties["gpr.user"]
                 password = System.getenv("GITHUB_TOKEN") ?: project.properties["gpr.key"]
