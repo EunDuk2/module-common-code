@@ -1,10 +1,10 @@
 package com.example.modulecommon.dto;
 
-public class TestDto {
+public class TestDto12 {
     private String name;
     private int age;
 
-    public TestDto(String name, int age) {
+    public TestDto12(String name, int age) {
         this.name = name;
         this.age = age;
     }
