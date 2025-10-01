@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.example'  // module-common의 groupId
-version = '1.0.2'      // 버전
+version = '1.0.3'      // 버전
 description = 'module-common'
 
 java {
