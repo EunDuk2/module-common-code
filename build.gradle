@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group = 'com.example'  // module-common의 groupId
+version = '1.0.1'      // 버전
+description = 'module-common'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+// jar 생성 활성화
+jar {
+    enabled = true
+}
+
+// GitHub Packages 배포 설정
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/EunDuk2/module-common")
+            credentials {
+                username = "EunDuk2"               // GitHub 계정
+                password = "xx"        // Personal Access Token
+            }
+        }
+    }
+}
