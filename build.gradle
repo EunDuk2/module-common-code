@@ -31,7 +31,7 @@ publishing {
         maven {
             name = "GitHubPackages"
             // YOUR_GITHUB_USERNAME을 실제 GitHub 사용자 이름으로 변경하세요.
-            url = uri("https://maven.pkg.github.com/YOUR_GITHUB_USERNAME/module-common")
+            url = uri("https://maven.pkg.github.com/Eunduk2/module-common")
 
             // ❌ 이 부분을 제거하거나, 아래와 같이 GitHub Actions의 setup-java 액션 설정을 따르도록 수정합니다.
             /*
