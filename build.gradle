@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.example'  // module-common의 groupId
-version = '1.0.8'      // 버전 (수정 및 배포시 무조건 다르게 설정 필요)
+version = '1.0.9'      // 버전 (수정 및 배포시 무조건 다르게 설정 필요)
 description = 'module-common'
 
 java {
@@ -47,6 +47,22 @@ dependencies {
     compileOnly 'org.springframework.boot:spring-boot-starter-data-jpa'
     compileOnly 'jakarta.persistence:jakarta.persistence-api:3.1.0'
     compileOnly 'org.hibernate.orm:hibernate-core:6.5.2.Final'  // Hibernate @CreationTimestamp, @UpdateTimestamp
+
+    // ✅ AWS SDK (S3)
+    compileOnly platform("software.amazon.awssdk:bom:2.29.33")  // BOM으로 버전 관리
+    compileOnly 'software.amazon.awssdk:s3'
+    compileOnly 'software.amazon.awssdk:auth'
+    compileOnly 'software.amazon.awssdk:regions'
+
+    // ✅ AWS SDK (S3Uploader / AwsS3Config 용)
+    compileOnly platform("software.amazon.awssdk:bom:2.29.33")
+    compileOnly 'software.amazon.awssdk:s3'
+    compileOnly 'software.amazon.awssdk:auth'
+    compileOnly 'software.amazon.awssdk:regions'
+    compileOnly 'software.amazon.awssdk:core' // RequestBody 등 core 클래스
+
+    // ✅ MultipartFile (S3Uploader에서 사용)
+    compileOnly 'org.springframework:spring-web'
 }
 
 
